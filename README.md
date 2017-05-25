@@ -17,10 +17,8 @@
 
 ### build
 ------------------------
-
 	download the repository
 	mkdir build; cd build
 	cmake ..
 	make
 	make install
------------------------
