@@ -1,0 +1,49 @@
+language: cpp
+cache: apt
+env:
+  matrix:
+   # =======================================================
+   # RELEASE Build
+   # =======================================================
+     - CMAKE_CXX_COMPILER=g++-5
+       CMAKE_BUILD_TYPE=RELEASE
+       CONSERVE_MEMORY=ON
+   # =======================================================
+   # RELEASE Build
+   # =======================================================
+   # D1. clang-mp-4.8     | RELEASE
+   #- CMAKE_CXX_COMPILER=clang-mp-3.4
+   #  CMAKE_BUILD_TYPE=RELEASE
+   # D2. g++-mp-4.8     | RELEASE
+   #- CMAKE_CXX_COMPILER=g++-mp-4.8
+   #  CMAKE_BUILD_TYPE=RELEASE
+
+before_install:
+   - sudo apt-add-repository --yes ppa:smspillaz/cmake-2.8.12
+   - sudo apt-get --yes update
+   - sudo apt-get install --yes cmake cmake-data
+   - sudo apt-get install --yes libgmp-dev
+   - sudo apt-get install --yes python-pip
+   - sudo apt-get install libgraphviz-dev
+   - sudo easy_install pygraphviz
+
+install:
+  - until sudo apt-get -qq update; do echo retry; done
+  - until sudo apt-get -qq install libstdc++5; do echo retry; done
+  - if [[$CMAKE_CXX_COMPILER == g++-5]]; then until sudo apt-get -qq install g++-5; do echo retry; done fi
+
+script:
+  - cd nklib
+  - mkdir -p build
+  - cd build
+  - /usr/bin/cmake ..
+  - make
+  - make install
+
+notifications:
+   # slack: seahornteam:NAUqZmZHFFviPH4ktQbJXgKu
+   email:
+     recipients:
+      - nklib-build@jiaying.li
+     on_success: always
+     on_failure: always
