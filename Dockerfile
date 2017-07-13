@@ -10,7 +10,7 @@ MAINTAINER Li Jiaying<sutdtest@googlegroups.com>
 #ENV TZ "Asia/Singapore"
 #ENV TERM xterm
 
-RUN apt-get update && apt-get install -y -qq git g++ make cmake libgsl0-dev python && \
+RUN apt-get update && apt-get install -y -qq git g++ make cmake libgsl0-dev python tree && \
 		mkdir -p nklib
 
 RUN \
