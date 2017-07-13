@@ -10,19 +10,19 @@ MAINTAINER Li Jiaying<sutdtest@googlegroups.com>
 #ENV TZ "Asia/Singapore"
 #ENV TERM xterm
 
-RUN apt-get update && apt-get install -y -qq git g++ make cmake libgsl0-dev python tree && \
+RUN apt-get update && apt-get install -y -qq git g++ make cmake libgsl0-dev libz3-dev && \
 		mkdir -p nklib
 
-RUN \
-		git clone https://github.com/Z3Prover/z3.git && \
-		cd z3 && \
-		python contrib/cmake/bootstrap.py create && \
-		mkdir build && \
-		cd build && \
-		cmake ../ && \
-		make -j && \
-		make install && \
-		rm -rf * 
+#RUN \
+#		git clone https://github.com/Z3Prover/z3.git && \
+#		cd z3 && \
+#		python contrib/cmake/bootstrap.py create && \
+#		mkdir build && \
+#		cd build && \
+#		cmake ../ && \
+#		make -j && \
+#		make install && \
+#		rm -rf * 
 
 ADD . nklib/
 
