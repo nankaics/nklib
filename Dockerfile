@@ -10,8 +10,9 @@ MAINTAINER Li Jiaying<sutdtest@googlegroups.com>
 #ENV TZ "Asia/Singapore"
 #ENV TERM xterm
 
-RUN apt-get update && apt-get install -y -qq git g++ make cmake libgsl0-dev libz3-dev && \
-		mkdir -p nklib
+RUN apt-get update && apt-get install -y -qq g++ make cmake libgsl0-dev libz3-dev 
+#&& \
+#		mkdir -p nklib
 
 #RUN \
 #		git clone https://github.com/Z3Prover/z3.git && \
@@ -27,8 +28,9 @@ RUN apt-get update && apt-get install -y -qq git g++ make cmake libgsl0-dev libz
 ADD . nklib/
 
 RUN \
-		mkdir -p nklib/build && \
-		cd nklib/build && \
+		cd nklib && \
+		mkdir -p build && \
+		cd build && \
 		cmake .. && \
 		make && \
 		make install && \
