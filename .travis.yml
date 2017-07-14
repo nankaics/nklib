@@ -36,7 +36,6 @@ install:
   - if [[$CMAKE_CXX_COMPILER == g++-5]]; then until sudo apt-get -qq install g++-5; do echo retry; done fi
 
 script:
-  - cd nklib
   - mkdir -p build
   - cd build
   - /usr/bin/cmake ..
