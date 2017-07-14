@@ -30,9 +30,10 @@ before_install:
 install:
     - sudo apt-get install --yes cmake cmake-data
     - sudo apt-get install --yes make
-    - sudo apt-get install --yes g++-5
+      # - sudo apt-get install --yes g++-5
     - sudo apt-get install --yes libz3-dev 
-    #- until sudo apt-get -qq update; do echo retry; done
+    - sudo apt-get install --yes libgsl0-dev
+    # - until sudo apt-get -qq update; do echo retry; done
     # - until sudo apt-get -qq install libstdc++5 libz3-dev; do echo retry; done
     # - if [[$CMAKE_CXX_COMPILER == g++-5]]; then until sudo apt-get -qq install g++-5; do echo retry; done fi
 
