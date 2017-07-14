@@ -6,8 +6,8 @@ env:
    # RELEASE Build
    # =======================================================
      - CMAKE_CXX_COMPILER=g++-5
-       # CMAKE_BUILD_TYPE=RELEASE
-       # CONSERVE_MEMORY=ON
+       CMAKE_BUILD_TYPE=RELEASE
+       CONSERVE_MEMORY=ON
    # =======================================================
    # RELEASE Build
    # =======================================================
@@ -20,7 +20,6 @@ env:
 
 before_install:
    - sudo apt-add-repository --yes ppa:smspillaz/cmake-2.8.12
-   - sudo apt-add-repository --yes ppa:hvr/z3
    - sudo apt-get --yes update
    - sudo apt-get install --yes cmake cmake-data
    - sudo apt-get install --yes make
