@@ -1,0 +1,18 @@
+language: cpp
+cache: apt
+services: docker
+
+install:
+    - docker build -t nklib_image:1.0 .
+    - docker run -d --name nklib_container nklib_image:1.0
+
+script:
+    - docker ps | grep -q nklib_container
+
+notifications:
+   # slack: seahornteam:NAUqZmZHFFviPH4ktQbJXgKu
+   email:
+     recipients:
+      - sutdtest@googlegroups.com
+     on_success: always
+     on_failure: always
