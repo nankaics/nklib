@@ -2,12 +2,11 @@
 
 <table>
 	<tr>
-		<th>Windows</th><th>Ubuntu</th><th>OS X</th><th>Chat with us</th>
+		<th>Windows</th><th>Ubuntu</th><th>OS X</th>
 	</tr>
 		<td>TBD</td>
 		<td><a href="https://travis-ci.org/seahorn/seahorn"><img src="https://travis-ci.org/nankaics/nklib.svg?branch=master" title="Ubuntu 12.04 LTS 64bit, clang"/></a></td>
 		<td>TBD</td>
-		<td><a href="https://gitter.im/seahorn/seahorn?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge"><img src="https://badges.gitter.im/nankaics/nklib.svg" title="Gitter"/></a></td>
 	</tr>
 </table>
 
